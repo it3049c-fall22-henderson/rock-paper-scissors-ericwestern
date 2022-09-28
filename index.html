@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Type your title here</title>
+    <title>Rock Paper Scissors</title>
     <!-- Bootstrap Styles-->
     <link rel="stylesheet" href="resources/styles/bootstrap.min.css">
     <link rel="stylesheet" href="resources/styles/styles.css" />
@@ -13,7 +13,39 @@
 <body>
     <div class="container">
         <!-- WORK FROM INSIDE THIS CONTAINER-->
+        <h1>Rock Paper Scissors</h1>
+    
+        <div id="welcome-screen" class="form-group">
+            <form action="" class="form-group" id="name-form">
+                <div>
+                    <label for="username">Your name</label>
+                    <input type="text" placeholder="Enter Name Here..." id="username" name="username" class="form-control"/>
+                    <br />
+                    <button id="start-game-button" class="btn btn-primary">Start Game!</button>
+                </div>
+            </form>
+        </div>
 
+        <div id="game-screen" class="border border-primary rounded-lg">
+            <div id="score-tally">
+                <p id="score">User: 0 v CPU: 0</p>
+            </div>
+
+            <form id="game-form">
+                <div class="form-group">
+                    <label>Select your choice:</label><br />
+                    <button id="rock-button" onclick="go(event, 'rock')" class="btn btn-success">Rock</button>
+                    <button id="paper-button" onclick="go(event, 'paper')" class="btn btn-success">Paper</button>
+                    <button id="scissors-button" onclick="go(event, 'scissors')" class="btn btn-success">Scissors</button>
+                </div>
+            </form>
+
+            <p id="game-history" class="overflow-auto"></p>
+
+            <button id="reset-game-button" class="btn btn-warning">Reset Game</button>
+        </div>
+
+        
     </div>
 
     <!-- Our own Scripts -->

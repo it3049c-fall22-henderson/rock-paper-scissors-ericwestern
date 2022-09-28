@@ -3,8 +3,10 @@ class RockPaperScissors {
     this.username = username;
     this.score = {
       user: 0,
-      cpu:0 
+      cpu: 0,
+      tie: 0
     },
+    this.matchNumber = 0;
     this.gameHistoryLog = [];
   }
 
@@ -14,8 +16,7 @@ class RockPaperScissors {
    */
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
-
-    return ;
+    return acceptedValues[Math.floor(Math.random() * 3)];
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -33,7 +34,15 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
+    if (userSelection === cpuSelection)
+      return 'tie';
 
+    if (userSelection === 'rock' && cpuSelection === 'scissors' ||
+        userSelection === 'paper' && cpuSelection === 'rock' ||
+        userSelection === 'scissors' && cpuSelection == 'paper')
+        return 'win';
+
+    return 'lose';
   }
 
   /**
@@ -41,7 +50,25 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   play(userSelection){
+    this.matchNumber++;
+    let cpuSelection = this.generateCPUResponse();
+    let log = 'Match ' + this.matchNumber + ': ' + this.username + ' selected ' + userSelection + ', CPU selected ' + cpuSelection + ': ';
+    let outcome = this.determineWinner(userSelection, cpuSelection);
+    switch (outcome) {
+      case 'win':
+        this.score.user++;
+        this.gameHistoryLog.push(log + this.username + ' wins!');
+        break;
 
+      case 'lose':
+        this.score.cpu++;
+        this.gameHistoryLog.push(log + this.username + ' loses!');
+        break;
+
+      default:
+        this.score.tie++;
+        this.gameHistoryLog.push(log + 'Tie!');
+    }
   }
 
 }

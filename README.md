@@ -7,14 +7,15 @@ Instructions to this assignment can be found [here](https://it3049c.github.io/Ma
 ## Checklist:
 - [x] update the assignment checks above to the correct link. - Done Automatically
 - [ ] All tests are passing
-- [ ] filled out the self-evaluation.
-- [ ] filled out the self-reflection.
+- [x] filled out the self-evaluation.
+- [x] filled out the self-reflection.
 
 ## Self-Evaluation: 
-how many points out of 20 does your team deserve on this assignment. Revise the assignment grading guideline and assignment rubrics for guidance.
+Ran behind on this one, should have completed before a trip I needed to make rather than after. Tests do not pass, do not match what is in assignment (welcome form vs name form) and I did not update for reset button or selection buttons rather than drop down.
 
 ## Team Reflection:
-- Where did you encounter struggles today, and what did you do to deal with it?
+No struggles
 
 
 ### How long it took us to finish this?
+Couple hours total.

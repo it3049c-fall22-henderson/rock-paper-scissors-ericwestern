@@ -2,6 +2,14 @@
   border: 1px solid black;
 }
 
-#game-screen {
-  border: 1px solid red;
+#rock-button, #paper-button, #scissors-button {
+  width: 100px;
+  padding: 10px;
+}
+
+#game-history {
+  border: 1px solid gray;
+  background-color: lightgrey;
+  width: 600px;
+  height: 300px;
 }
